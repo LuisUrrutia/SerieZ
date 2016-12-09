@@ -1,0 +1,21 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "SerieZ",
+      "appId": "me.urrutia.seriez",
+      "ionicCss": false,
+      "bowerPackages": [
+        "localforage#~1.4.0"
+      ],
+      "platforms": [
+        "android"
+      ],
+      "plugins": [
+        "cordova-plugin-device",
+        "cordova-plugin-inappbrowser"
+      ],
+      "appModule": "SerieZ",
+      "ecosystems": []
+    }
+  }
+}
