@@ -1,4 +1,6 @@
 {
-  "SERVER_URL": "https://PRODSERVER/api",
-  "SOME_OTHER_URL": "https://echo.getpostman.com"
+  "TMDB_API": "https://api.themoviedb.org/3",
+  "TMDB_API_KEY": "984f469bde096d42d45722b7aa381d54",
+  "TMDB_IMG_URL": "https://image.tmdb.org/t/p/w500",
+  "DEFAULT_LANG": "es-CL"
 }

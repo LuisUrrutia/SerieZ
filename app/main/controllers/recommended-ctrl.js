@@ -1,7 +1,18 @@
 'use strict';
 angular.module('main')
-.controller('RecommendedCtrl', function ($log) {
+.controller('RecommendedCtrl', function ($log, $window, Config, Tmdb) {
 
-  $log.log('Hello from your Controller: RecommendedCtrl in module main:. This is your controller:', this);
+  var vm = this;
+
+  vm.series = [];
+  vm.baseImgUrl = Config.ENV.TMDB_IMG_URL;
+
+  Tmdb.getPopularTvShows()
+    .then(function (response) {
+      vm.series = response.data.results;
+    }, function (error) {
+      // error.status_message
+      console.log(error);
+    });
 
 });

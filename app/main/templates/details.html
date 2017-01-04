@@ -1,16 +1,38 @@
-<ion-view view-title="main module">
+<ion-view view-title="{{ vm.serie.name }}">
   <!-- do you want padding? -->
-  <ion-content class="padding">
+  <ion-content class="details">
 
     <!-- content goes here -->
-    <ion-list>
-      <ion-item class="item item-divider">
-        This is your details template!
-      </ion-item>
-      <ion-item class="item item-icon">
-        Yeiiii!
-      </ion-item>
-    </ion-list>
+    <div class="details__image">
+      <img ng-src="{{ vm.baseImgUrl + vm.serie.backdrop_path }}" />
+    </div>
+    <div class="details__info">
+      <p><strong>Temporadas:</strong> {{ vm.serie.number_of_seasons }}</p>
+      <p>
+        <strong>Generos: </strong>
+        <span ng-repeat="genre in vm.serie.genres">{{ genre.name }} </span>
+      </p>
+      <p>{{ vm.serie.overview }}</p>
+    </div>
+    <div class="details__seasons">
+      <div class="list">
+        <div class="item" ng-repeat="season in vm.serie.seasons">
+          Temporada {{ season.season_number }}
+          <span class="item-note">
+            {{ season.episode_count }} Capitulos
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="details__favorite">
+      <button ng-if="!vm.inFavorites" ng-click="vm.saveToFavorites()" class="button button-block button-royal">
+        Añadir a favoritos
+      </button>
+      <button ng-if="vm.inFavorites" ng-click="vm.deleteFromFavorites()" class="button button-block button-assertive">
+        Borrar de favoritos
+      </button>
+    </div>
 
   </ion-content>
 </ion-view>

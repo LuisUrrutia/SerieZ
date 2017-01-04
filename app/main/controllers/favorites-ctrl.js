@@ -1,7 +1,13 @@
 'use strict';
 angular.module('main')
-.controller('FavoritesCtrl', function ($log) {
+.controller('FavoritesCtrl', function (Favorites, Config) {
 
-  $log.log('Hello from your Controller: FavoritesCtrl in module main:. This is your controller:', this);
+  var vm = this;
+  vm.tvShows = [];
+  vm.baseImgUrl = Config.ENV.TMDB_IMG_URL;
 
+  Favorites.getFavorites()
+    .then(function (value) {
+      vm.tvShows = value;
+    });
 });

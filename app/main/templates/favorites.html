@@ -1,18 +1,14 @@
 <ion-view title="Favoritos" id="page4">
   <ion-content padding="true" class="has-header">
-    <ion-list id="favoritos-list3">
-      <ion-item class="item-thumbnail-left" id="favoritos-list-item15" ui-sref="tabsController.ficha">
-        <h2>Serie 1</h2>
+    <ion-list>
+
+      <ion-item class="item-thumbnail-left"
+                ng-repeat="serie in vm.tvShows"
+                ui-sref="details({id: serie.id})">
+        <img ng-src="{{ vm.baseImgUrl + serie.backdrop_path }}" />
+        <h2>{{ serie.name }}</h2>
       </ion-item>
-      <ion-item class="item-thumbnail-left" id="favoritos-list-item16" ui-sref="tabsController.ficha">
-        <h2>Serie 2</h2>
-      </ion-item>
-      <ion-item class="item-thumbnail-left" id="favoritos-list-item17" ui-sref="tabsController.ficha">
-        <h2>Serie 3</h2>
-      </ion-item>
-      <ion-item class="item-thumbnail-left" id="favoritos-list-item18" ui-sref="tabsController.ficha">
-        <h2>Serie 4</h2>
-      </ion-item>
+
     </ion-list>
   </ion-content>
 </ion-view>

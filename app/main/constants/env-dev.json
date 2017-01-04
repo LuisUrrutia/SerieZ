@@ -1,4 +1,6 @@
 {
-  "SERVER_URL": "https://DEVSERVER/api",
-  "SOME_OTHER_URL": "/postman-proxy"
+  "TMDB_API": "https://api.themoviedb.org/3",
+  "TMDB_API_KEY": "8bab4bab26fb49a2a86139047d81ec48",
+  "TMDB_IMG_URL": "https://image.tmdb.org/t/p/w500",
+  "DEFAULT_LANG": "es-CL"
 }
